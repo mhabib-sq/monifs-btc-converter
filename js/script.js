@@ -40,7 +40,7 @@ async function convert() {
     try {
         const price = await fetchCryptoPrice(fromCurrency, toCurrency);
         const convertedAmount = cryptoAmount * price;
-        document.getElementById('exchangeRate').textContent = `${cryptoAmount} ${fromCurrency.toUpperCase()} is approximately ${convertedAmount.toFixed(2)} ${toCurrency.toUpperCase()}`;
+        document.getElementById('exchangeRate').textContent = `${cryptoAmount} ${fromCurrency.toUpperCase()} = ${convertedAmount.toFixed(2)} ${toCurrency.toUpperCase()}`;
     } catch (error) {
         document.getElementById('exchangeRate').textContent = 'Error fetching the price. Please try again later.';
     }
