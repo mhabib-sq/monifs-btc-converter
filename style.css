@@ -1,4 +1,4 @@
-/* Import Google Font - Poppins */
+/* need to import the poppins font*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -20,7 +20,7 @@ background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
 opacity: 0.95;
-background-image: url(images/converter_background2.png)
+background-image: url(images/converter_background2.2.png)
 }
 ::selection{
   color: #fff;

@@ -2,11 +2,20 @@ document.getElementById('convertButton').addEventListener('click', convert);
 document.getElementById('fromCurrency').addEventListener('change', updateFromImage);
 // document.getElementById('cryptoAmount').addEventListener('change', convert);
 
-document.getElementById('cryptoAmount').addEventListener("keyup", ({key}) => {
-    if (key === "Enter") {
-        convert()
-    }
-})
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
+const debouncedConvert = debounce(convert, 500); // reminder that the # is in milliseconds!
+document.getElementById('cryptoAmount').addEventListener("input", debouncedConvert);
 
 async function fetchCryptoPrice(crypto, currency) {
     const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto}&vs_currencies=${currency}`);
