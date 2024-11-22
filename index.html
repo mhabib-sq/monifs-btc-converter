@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <header>Crypto to USD</header>
-      <h1><center>Convert Bitcoin to United States Dollar</center></h1>
+      <header>BTC to USD</header>
+      <h1><center>Convert <span style="color: #F7931A">Bitcoin</span> into <span style="color: #00CF31">United States Dollar</span></center></h1>
       <form id="converterForm" action="#">
         <div class="amount">
           <p>Enter Amount</p>
@@ -20,7 +22,7 @@
           <div class="from">
             <p>From</p>
             <div class="select-box">
-              <img id="fromImage" src="https://healthexec.com/sites/default/files/2024-05/bitcoin-logo.png" alt="currency-logo">
+              <img id="fromImage" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="currency-logo">
               <select id="fromCurrency">
                 <option value="bitcoin">BTC</option>
                 <option value="ethereum">ETH</option>
@@ -39,13 +41,14 @@
             </div>
           </div>
         </div>
-        <div class="exchange-rate" id="exchangeRate">Getting exchange rate...</div>
-        <button type="button" id="convertButton">Get Exchange Rate</button>
+        <div class="exchange-rate" id="exchangeRate">Generating your wish...</div>
+        <button type="button" id="convertButton">Convert your currency!</button>
       </form>
-    </div>
+   
+      <!-- reminder that this is the canvas being utilized for the chart! :-) -->
+      <canvas id="priceChart" width="400" height="200"></canvas>
+   </div>
 
-    <script src="js/country-list.js"></script>
-    <script src="js/script.js"></script>
-
+   <script src="js/script.js"></script>
   </body>
 </html>
